@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2 style="padding:20px;">📊 Loan Prediction Dashboard</h2>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-card">
+
+        <h2>Welcome 👋</h2>
+        <p>Manage your loan predictions easily</p>
+
+        <div class="dashboard-grid">
+
+            <div class="dash-box">
+                <h3>🧾 Check Loan</h3>
+                <p>Analyze eligibility using ML</p>
+                <a href="/input">Go →</a>
+            </div>
+
+            <div class="dash-box">
+                <h3>📊 Dashboard</h3>
+                <p>View system overview</p>
+                <a href="/dashboard">Open →</a>
+            </div>
+
+            <div class="dash-box">
+                <h3>🚪 Logout</h3>
+                <p>Exit securely</p>
+                <a href="/logout">Logout →</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

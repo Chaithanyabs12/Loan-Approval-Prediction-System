@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="centre">
+        <h2>Loan App</h2>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/input">Check Loan</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="form-wrapper">
+
+            <!-- LEFT PANEL -->
+            <div class="left-panel">
+                <h2>Why check with us?</h2>
+                <ul>
+                    <li>✔ AI-powered prediction accuracy</li>
+                    <li>✔ Instant result generation</li>
+                    <li>✔ Secure & reliable system</li>
+                </ul>
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="form-card">
+
+                <h2>Enter Your Details</h2>
+
+                <form action="/predict" method="post">
+
+                    <div class="grid">
+
+                        <div>
+                            <label>Gender</label>
+                            <select name="gender">
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Marital Status</label>
+                            <select name="married">
+                                <option value="1">Married</option>
+                                <option value="0">Single</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Education</label>
+                            <select name="education">
+                                <option value="1">Graduate</option>
+                                <option value="0">Not Graduate</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Credit History</label>
+                            <select name="credit">
+                                <option value="1">Good</option>
+                                <option value="0">Bad</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Monthly Income ($)</label>
+                            <input type="number" name="income" placeholder="Enter income" required>
+                        </div>
+
+                        <div>
+                            <label>Loan Amount ($)</label>
+                            <input type="number" name="loan" placeholder="Enter loan amount" required>
+                        </div>
+
+                    </div>
+
+                    <button class="analyze-btn">🔍 Analyze Eligibility</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

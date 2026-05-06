@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="top-section">
+
+        <!-- RESULT CARD -->
+        <div class="result-card">
+            <h3>Analysis Result</h3>
+
+            <div class="big-icon {{ 'success' if 'Approved' in result else 'fail' }}">
+                {{ '✔' if 'Approved' in result else '✖' }}
+            </div>
+
+            <h2 class="{{ 'success' if 'Approved' in result else 'fail' }}">
+                {{result}}
+            </h2>
+
+            <p>
+                {% if 'Approved' in result %}
+                    Congratulations! You are eligible for this loan.
+                {% else %}
+                    Unfortunately, you are not eligible currently.
+                {% endif %}
+            </p>
+
+            <a href="/input" class="btn">Check Another Loan</a>
+        </div>
+
+        <!-- DONUT + STATS -->
+        <div class="chart-card">
+            <h3>Approval Statistics</h3>
+
+            <img src="data:image/png;base64,{{pie_url}}" width="220">
+
+            <div class="stats">
+                <div class="stat-box green">
+                    Approval<br><b>{{approval}}%</b>
+                </div>
+
+                <div class="stat-box red">
+                    Rejection<br><b>{{rejection}}%</b>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FINANCIAL ADVICE -->
+    <div class="advice">
+        <h3>Financial Advice</h3>
+
+        <div class="advice-grid">
+
+            <div class="advice-card">
+                <b>💡 Credit Score</b><br>
+                Maintain a score above 700 for better approval chances.
+            </div>
+
+            <div class="advice-card">
+                <b>📊 Debt Ratio</b><br>
+                Keep your EMI below 36% of your income.
+            </div>
+
+            <div class="advice-card">
+                <b>💰 Emergency Fund</b><br>
+                Maintain 3–6 months of expenses as backup.
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
